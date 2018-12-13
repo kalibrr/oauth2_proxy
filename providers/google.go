@@ -188,7 +188,7 @@ func userInGroup(service *admin.Service, groups []string, email string) bool {
 		}
 		resp, err := req.Do()
 		if err != nil {
-			log.Printf("Error calling service.Groups.List().userKey(%s)", email)
+      log.Printf("Error calling service.Groups.List().userKey(%s): %v", email, err)
 			return false
 		}
 		for _, group := range resp.Groups {
